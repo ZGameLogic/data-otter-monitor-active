@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: disable monitor
-        uses: ./.github/workflows/data-otter.yml
+        uses: ZGameLogic/data-otter-monitor-active/.github/workflows/data-otter.yml
         with:
           monitorId: 1
           active: false
