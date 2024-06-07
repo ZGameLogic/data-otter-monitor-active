@@ -4,12 +4,12 @@ on:
   push:
 jobs:
   disable-monitor:
-    uses: ./.github/workflows/data-otter.yml
+    uses: ./action.yml
     with:
       monitorId: 1
       active: false
   enable-monitor:
-    uses: ./.github/workflows/data-otter.yml
+    uses: ./action.yml
     needs: disable-monitor
     with:
       monitorId: 1
