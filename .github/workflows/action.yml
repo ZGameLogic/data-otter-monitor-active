@@ -1,0 +1,22 @@
+name: Data-Otter-Monitor-Active
+
+on:
+  workflow_call:
+    inputs:
+      monitorId:
+        description: "The ID of the monitor"
+        required: true
+        type: string
+      active:
+        description: "The active status"
+        required: true
+        type: boolean
+
+jobs:
+  data-otter-contact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make POST request
+        run: |
+          curl -X POST "http://http://20.40.218.161:8080/monitors/${{ inputs.monitorId }}/active/${{ inputs.active }}" \
+          -H "Content-Type: application/json"
