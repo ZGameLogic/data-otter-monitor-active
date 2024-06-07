@@ -6,6 +6,8 @@ jobs:
   disable-monitor:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: disable monitor
         uses: ./action.yml
         with:
