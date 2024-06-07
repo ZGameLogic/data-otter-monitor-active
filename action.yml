@@ -18,4 +18,4 @@ jobs:
     steps:
       - name: Make POST request
         run: |
-          curl -X POST "http://20.40.218.161:8080/monitors/${{ inputs.monitorId }}/active/${{ inputs.active }}"
+          curl -X POST "http://20.40.218.161:8080/monitors/${{ github.event.inputs.monitorId }}/active/${{ github.event.inputs.active }}"
