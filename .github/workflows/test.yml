@@ -1,0 +1,13 @@
+name: test
+
+on:
+  push:
+jobs:
+  disable-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: disable monitor
+        uses: ./action.yml
+        with:
+          monitorId: 1
+          active: false
