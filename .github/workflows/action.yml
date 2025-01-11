@@ -3,6 +3,10 @@ name: Data-Otter-Monitor-Active
 on:
   workflow_call:
     inputs:
+      applicationId:
+        description: "The ID of the application"
+        required: true
+        type: number
       monitorId:
         description: "The ID of the monitor"
         required: true
@@ -17,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Make POST request
-        run: curl -X POST "http://44.201.152.75:8080/monitors/${{ inputs.monitorId }}/active/${{ inputs.active }}"
+        run: curl -X POST "http://monitoring.zgamelogic.com:8080/monitors/${{ inputs.applicationId }}/${{ inputs.monitorId }}/active/${{ inputs.active }}"
